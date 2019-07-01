@@ -1,0 +1,5 @@
+
+N=100000
+
+buble.....14.6315 seconds.
+Ranking...
