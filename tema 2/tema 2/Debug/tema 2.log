@@ -1,0 +1,19 @@
+﻿  MapGraph.cpp
+c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.14.26428\include\utility(202): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  e:\acc\tema 2\tema 2\mapgraph.cpp(42): note: see reference to function template instantiation 'std::pair<Point,int>::pair<_Ty2&,double&,0>(_Other1,_Other2) noexcept(false)' being compiled
+          with
+          [
+              _Ty2=Point,
+              _Other1=Point &,
+              _Other2=double &
+          ]
+  e:\acc\tema 2\tema 2\mapgraph.cpp(42): note: see reference to function template instantiation 'std::pair<Point,int>::pair<_Ty2&,double&,0>(_Other1,_Other2) noexcept(false)' being compiled
+          with
+          [
+              _Ty2=Point,
+              _Other1=Point &,
+              _Other2=double &
+          ]
+  tema 2.cpp
+  Generating Code...
+  tema 2.vcxproj -> E:\acc\tema 2\Debug\tema 2.exe
