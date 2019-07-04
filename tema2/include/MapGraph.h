@@ -8,7 +8,7 @@
 class Point {
 public:
 	std::string Name;
-	int x, y;
+	double x, y;
 	bool friend   operator < (Point const& v1, Point const& v2);
 	bool operator ==(Point const &other);
 	bool operator !=(Point const &other);
@@ -20,7 +20,7 @@ class MapGraph {
 
 public:
 	MapGraph();
-	bool addVertex(std::string Name, int x, int y);
+	bool addVertex(std::string Name, double x, double y);
 	bool addEdge(std::string Name1, std::string Name2, double lenght);
 	void printGraph();
 	int getNumVertices();
@@ -28,6 +28,8 @@ public:
 	std::list<Point> dijkstra(Point startpoint, Point goalpoint);
 	std::list<Point> aStarSearch(Point startpoint, Point goalpoint);
 	Point getPointByName(std::string Name);
+
+	void addCities();
 
 };
 

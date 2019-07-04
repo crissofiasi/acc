@@ -1,0 +1,28 @@
+
+N=100000
+
+buble.....95.3525 seconds.
+Ranking...26.6757 seconds.
+merge.....0.193582 seconds.
+Bitonic...0.341635 seconds.
+Linear....0.0023306 seconds.
+
+N=300000
+
+buble.....802.012 seconds.
+Ranking...268.644 seconds.
+merge.....0.560715 seconds.
+Bitonic...1.32268 seconds.
+Linear....0.006454 seconds.
+
+N=600000
+
+buble.....3336.13 seconds.
+Ranking...1070.05 seconds.
+merge.....1.13894 seconds.
+Bitonic...2.924 seconds.
+Linear....0.0139919 seconds.
+
+N=1000000
+
+buble.....
