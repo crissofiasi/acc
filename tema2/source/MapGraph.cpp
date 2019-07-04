@@ -2,6 +2,18 @@
 #include "MapGraph.h"
 #include <iostream>
 
+
+bool Point::operator ==(Point const &other) {
+
+	return (this->x == other.x) && (this->y == other.y);
+}
+
+bool Point::operator !=(Point const &other) {
+
+	return !(*this==other);
+}
+
+
 bool operator<(Point const &v1,Point const &v2) {
 	return v1.Name < v2.Name;
 }
@@ -74,8 +86,68 @@ int MapGraph::getNumEdges() {
 
 	return n;
 }
+
+
+Point MapGraph::getPointByName(std::string Name) {
+	return CNames[Name];
+}
+
+
 std::list<Point> MapGraph::dijkstra(Point startpoint, Point goalpoint){
+
+	std::set<Point> Q;
+	std::map<Point, int> dist;
+	std::map<Point, Point> prev;
+	Point u,undefined;
+	undefined.x= undefined.y = -1;
+	undefined.Name = "undefined";
+	for (auto pair : V)
+	{
+		Point p = pair.first;
+		dist[p] = INT16_MAX;
+		prev[p] = undefined;
+		Q.insert(p);
+	}
+	dist[startpoint] = 0;
+
+	while (!Q.empty())
+	{
+		int minDist = INT16_MAX;
+		
+		for (Point p : Q) {
+			if (dist[p] < minDist)
+			{
+				u = p;
+				minDist = dist[p];
+			}
+		}
+		Q.erase(u);
+
+		for (auto pair : V[u]) {
+			Point neighbor = pair.first;
+			if (Q.find(neighbor) != Q.end())
+			{
+				double alt = dist[u] + pair.second;
+				if (alt < dist[neighbor])
+				{
+					dist[neighbor] = alt;
+					prev[neighbor] = u;
+				}
+			}
+		}
+		if (u == goalpoint)
+			break;
+
+	}
+
+	
 	std::list<Point> l;
+	Point End = goalpoint;
+	while (End != undefined) {
+		l.push_front(End);
+		End = prev[End];
+	}
+
 	return l;
 }
 std::list<Point> MapGraph::aStarSearch(Point startpoint, Point goalpoint){

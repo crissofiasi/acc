@@ -4,11 +4,14 @@
 #include <map>
 #include <string>
 #include <list>
+#include <set>
 class Point {
 public:
 	std::string Name;
 	int x, y;
 	bool friend   operator < (Point const& v1, Point const& v2);
+	bool operator ==(Point const &other);
+	bool operator !=(Point const &other);
 };
 
 class MapGraph {
@@ -24,6 +27,7 @@ public:
 	int getNumEdges();
 	std::list<Point> dijkstra(Point startpoint, Point goalpoint);
 	std::list<Point> aStarSearch(Point startpoint, Point goalpoint);
+	Point getPointByName(std::string Name);
 
 };
 
